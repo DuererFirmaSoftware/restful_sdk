@@ -1,10 +1,10 @@
 package org.duererfirma.rest.java.httprequest.requestPerformers;
 
+import java.util.HashMap;
+
 import org.duererfirma.rest.java.httprequest.HttpRequestPerformer;
 import org.duererfirma.rest.java.httprequest.RequestType;
 import org.json.JSONObject;
-
-import java.util.HashMap;
 
 public class DefaultJSONObjectRequestPerformer extends HttpRequestPerformer {
     public DefaultJSONObjectRequestPerformer(String address, HashMap<String, String> params, RequestType type) {

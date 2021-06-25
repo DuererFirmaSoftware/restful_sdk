@@ -4,7 +4,7 @@ package org.duererfirma.rest.java;
 import org.duererfirma.rest.java.httprequest.HttpRequestResponse;
 import org.duererfirma.rest.java.httprequest.JSONRequestResponse;
 import org.duererfirma.rest.java.httprequest.RequestType;
-import org.duererfirma.rest.java.httprequest.impl.TokenRequestPerformer;
+import org.duererfirma.rest.java.httprequest.impl.incoming.TokenRequestPerformer;
 import org.duererfirma.rest.java.httprequest.requestPerformers.DefaultJSONObjectRequestPerformer;
 
 public class TestMain {

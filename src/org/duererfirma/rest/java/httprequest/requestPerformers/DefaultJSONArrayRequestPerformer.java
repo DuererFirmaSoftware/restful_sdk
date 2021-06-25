@@ -1,10 +1,10 @@
 package org.duererfirma.rest.java.httprequest.requestPerformers;
 
+import java.util.HashMap;
+
 import org.duererfirma.rest.java.httprequest.HttpRequestPerformer;
 import org.duererfirma.rest.java.httprequest.RequestType;
 import org.json.JSONArray;
-
-import java.util.HashMap;
 
 public class DefaultJSONArrayRequestPerformer extends HttpRequestPerformer {
     public DefaultJSONArrayRequestPerformer(String address, HashMap<String, String> params, RequestType type) {

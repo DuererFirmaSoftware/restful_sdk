@@ -3,6 +3,7 @@ package org.duererfirma.rest.java.httprequest;
 public enum JSONRequestResponse {
     OK(200),
     PARTIAL(206),
+    ERROR(0),
     INVALID_ENUM(-1);
 
 
@@ -17,9 +18,9 @@ public enum JSONRequestResponse {
         return result;
     }
 
-    public static HttpRequestResponse getResponse(int result)
+    public static JSONRequestResponse getResponse(int result)
     {
-        for(HttpRequestResponse response : HttpRequestResponse.values())
+        for(JSONRequestResponse response : JSONRequestResponse.values())
         {
             if(response.getResultCode() == result)
             {
@@ -27,13 +28,18 @@ public enum JSONRequestResponse {
             }
         }
 
-        return HttpRequestResponse.INVALID_ENUM;
+        return JSONRequestResponse.INVALID_ENUM;
 
     }
 
-    public static boolean isBlockedResponse(HttpRequestResponse response)
+    public static boolean isBlockedResponse(JSONRequestResponse response)
     {
-        return response == null || response.toString().startsWith("ERROR") || response == HttpRequestResponse.INVALID_ENUM;
+        return response == null || response.toString().startsWith("ERROR") || response == JSONRequestResponse.INVALID_ENUM;
+    }
+    
+    public boolean isBlockedResponse()
+    {
+    	return isBlockedResponse(this);
     }
 
     public static JSONRequestResponse getResponse(String result)

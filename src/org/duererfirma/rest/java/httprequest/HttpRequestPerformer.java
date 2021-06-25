@@ -10,23 +10,20 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class HttpRequestPerformer {
 	
 	
-	String address;
-	HashMap<String, String> params;
-	RequestType type;
-	HashMap<String, Object> jsonObjects = new HashMap<>();
-	HttpRequestResponse response;
+	protected String address;
+	protected HashMap<String, String> params;
+	protected RequestType type;
+	protected HashMap<String, Object> jsonObjects = new HashMap<>();
+	protected HttpRequestResponse response;
 	
 	public HttpRequestPerformer(String address, HashMap<String, String> params, RequestType type)
 	{
-		Objects.requireNonNull(address, "No address set");
 		this.address = address;
 		this.params = params;
-		Objects.requireNonNull(address, "No RequestType set");
 		this.type = type;
 	}
 
@@ -59,7 +56,6 @@ public class HttpRequestPerformer {
 			HttpRequestResponse response = HttpRequestResponse.getResponse(con.getResponseCode());
 			if (!response.toString().startsWith("ERROR") && response.getResultCode() > 0)
 				onSuccessfulRequest(con, response);
-			else
 			this.response = response;
 			return response;
 		}catch (ConnectException e)
